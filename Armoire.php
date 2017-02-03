@@ -29,8 +29,20 @@ class Armoire {
 
 	public static function get($id){
 		$tabId = new self();
-		return $tabId->getInstance()->find_one($id);
+		return $tabId->db->find_one($id);
 
+	}
+	public static function total(){
+		$a = new self;
+		return $a->db->count();
+	}
+	public static function save($id, $data){
+		$record = new self;
+		$sock = $record->db->findOne($id);
+		foreach($data as $key => $value){
+			$sock->$key = $value;
+		}
+		$sock->save();
 	}
 }
 
