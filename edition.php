@@ -47,13 +47,8 @@
 				$val->temp_lavage = $tempInput;
 				$val->date_lavage = $dateInput;
 
-
-
 				$val->save();
 			}
-
-			
-
 		}
 	}
 	?>

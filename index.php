@@ -20,7 +20,7 @@
 					<th>Editer</th>
 				</tr>
 				<?php
-				$tab = Armoire::all(10,0);
+				$tab = Armoire::all(100,0);
 
 
 			foreach ($tab as $value) {

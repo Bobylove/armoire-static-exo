@@ -10,7 +10,7 @@
 
 	<h1>Details des mes chaussettes</h1>	
 
-	<?php $tab3 = Armoire::all();
+	<?php $tab3 = Armoire::all(100);
 	foreach ($tab3 as $value) {
 		if ($_GET['id'] === $value->id) {
 
@@ -23,7 +23,7 @@
 
 			<h4>Temp_lavage : <?php echo $value->temp_lavage ?> </h4><br>
 
-			<h4>Date_lavage : <?php echo $value->data_lavage ?> </h4><br>
+			<h4>Date_lavage : <?php echo $value->date_lavage ?> </h4><br>
 
 			<?php }
 		}
