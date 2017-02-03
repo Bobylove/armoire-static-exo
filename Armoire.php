@@ -36,14 +36,6 @@ class Armoire {
 		$a = new self;
 		return $a->db->count();
 	}
-	public static function save($id, $data){
-		$record = new self;
-		$sock = $record->db->findOne($id);
-		foreach($data as $key => $value){
-			$sock->$key = $value;
-		}
-		$sock->save();
-	}
 }
 
 ?>
