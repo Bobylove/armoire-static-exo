@@ -27,15 +27,21 @@ class Armoire {
 		->find_many();
 	}
 
-	public static function get($id){
+	public static function get(){
 		$tabId = new self();
-		return $tabId->db->find_one($id);
+		return $tabId->getInstance()->find_one();
 
 	}
 	public static function total(){
 		$a = new self;
 		return $a->db->count();
 	}
+	public static function del(){
+		$tab = new self();	
+		return $tab->getInstance()
+		->find_many();
+	}
+	
 }
 
 ?>

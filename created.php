@@ -1,20 +1,17 @@
-<?php require 'Armoire.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Edition</title>
+	<title>creé</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css"/>
 </head>
 <body>
-	<a href="index.php">Home</a>
+<a href="index.php">Home</a>
 
-	<?php $tab2 = Armoire::all();
-	foreach ($tab2 as $value) {
-		if ($_GET['id'] === $value->id) {
-
+	<?php $tab4 = Armoire::all();
+	foreach ($tab4 as $value) {
 			?>
-			<form class="ui form" action="#" method="post">
+			<form action="#" method="post">
 
 				<input type="hidden" name="id" id="id" value="<?php echo $value->id ?>">
 				<br>
@@ -35,7 +32,7 @@
 			</form>
 
 			<?php
-			if (!empty($_POST) && isset($_POST['id'])) {
+			if (isset($_POST['id'])) {
 				
 				$val = ORM::for_table('mes_chaussettes')->find_one($value->id);
 				$pointureInput = $_POST['pointure'];
@@ -49,11 +46,10 @@
 				$val->date_lavage = $dateInput;
 
 				$val->save();
-				header('location : index.php');
 			}
 		}
 	}
 	?>
-
+	
 </body>
 </html>

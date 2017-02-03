@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>details</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css"/>
 </head>
 <body>
 	<a href="index.php">Home</a><br>

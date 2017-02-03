@@ -18,26 +18,26 @@
 					<th>temp_lavage</th>
 					<th>date_lavage</th>
 					<th>Editer</th>
+					<th>Supprimer</th>
 				</tr>
 				<?php
-				$tab = Armoire::all(100,0);
+				$tab = Armoire::all(10,0);
+				foreach ($tab as $value) {
+					?>
+					<tr>
+						<td><a href="details.php?id=<?php echo $value->id ?>"><?php echo $value->id; ?></a></td>
+						<td><?php echo $value->pointure; ?></td>
+						<td><?php echo $value->couleur; ?></td>
+						<td><?php echo $value->temp_lavage; ?>°c</td>
+						<td><?php echo $value->date_lavage; ?></td>
+						<td><a href="edition.php?id=<?php echo $value->id ?>"><i class="edit icon"></i></a></td>
+						<td><a href="delete.php?id=<?php echo $value->id; ?>"><button class="ui red button"><i class="delete icon"></i></button></a></td>
 
+					</tr>
 
-			foreach ($tab as $value) {
+					<?php 
+				}
 				?>
-				<tr>
-					<td><a href="details.php?id=<?php echo $value->id ?>"><?php echo $value->id; ?></a></td>
-					<td><?php echo $value->pointure; ?></td>
-					<td><?php echo $value->couleur; ?></td>
-					<td><?php echo $value->temp_lavage; ?>°c</td>
-					<td><?php echo $value->date_lavage; ?></td>
-					<td><a href="edition.php?id=<?php echo $value->id ?>"><i class="edit icon"></i></a></td>
-
-				</tr>
-
-				<?php 
-			}
-			?>
 			</table>
 		</div>
 		<br>
